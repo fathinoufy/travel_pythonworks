@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+</head>
+<body>
+<fieldset>
+  <legend><h1 align="center">REGISTRATION</h1></legend>
+<form  align="center" action="register" method="post">
+  {% csrf_token %}
+  <label>UserName:</label>
+  <input type="text" name="username"><br><br>
+  <label>First Name:</label>
+  <input type="text" name="first_name"><br><br>
+  <label>Last Name:</label>
+  <input type="text" name="last_name"><br><br>
+  <label> Valid Email:</label>
+  <input type="email" name="email"><br><br>
+  <label>Create Password:</label>
+  <input type="password" name="password"><br><br>
+  <label>Confirm Password:</label>
+  <input type="password" name="password1"><br><br>
+  <input type="submit">
+  <input type="reset" value="clear">
+</form>
+  {% for msg in messages %}
+  <h2>{{msg}}</h2>
+  {% endfor %}
+</fieldset>
+</body>
+</html>
